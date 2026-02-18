@@ -1,20 +1,37 @@
-import { MovieCard } from './js/components/movieCard.jsx'
-import Header from './js/components/Header.jsx'
-import './App.css'
+// Hook de React para manejar estado
+import { useState } from "react"
+
+// Componentes
+import Header from "./components/Header"
+
+// Vistas
+import Home from "./pages/Home"
+import Cartelera from "./pages/Cartelera"
+import Detalle from "./pages/Detalle"
+import Food from "./pages/Food"
+import Otros from "./pages/Otros"
 
 function App() {
+  // Estado que controla qué vista se muestra
+  const [vistaActual, setVistaActual] = useState("home")
+  // Estado que guarda la película seleccionada
+  const [peliculaSeleccionada, setPeliculaSeleccionada] = useState(null)
+
   return (
-    <>
-      <Header />
-      <main style={{display: "flex"}}>
-        <MovieCard title="Duna: Parte Dos" />
-        <MovieCard title="Kung Fu Panda 4" />
-        <MovieCard title="Intensamente 2" />
-        <MovieCard title="Furiosa: A Mad Max Saga" />
-        <MovieCard title="Deadpool & Wolverine" />
-      </main>
-    </>
+    // Contenedor raíz de la aplicación
+    <div style={{ minHeight: "100vh" }}>
+      {/* Header puede cambiar la vista */}
+      <Header cambiarVista={setVistaActual} />
+
+      {/* Renderizado condicional de vistas */}
+      {vistaActual === "home" && <Home cambiarVista={setVistaActual} seleccionarPelicula={setPeliculaSeleccionada} />}
+      {vistaActual === "cartelera" && <Cartelera cambiarVista={setVistaActual} seleccionarPelicula={setPeliculaSeleccionada} />}
+      {vistaActual === "comida" && <Food cambiarVista={setVistaActual} seleccionarPelicula={setPeliculaSeleccionada} />}
+      {vistaActual === "detalle" && <Detalle pelicula={peliculaSeleccionada} cambiarVista={setVistaActual} />}
+      {vistaActual === "otro" && <Otros cambiarVista={setVistaActual} />}
+    </div>
   )
 }
 
+// Exportamos App
 export default App
