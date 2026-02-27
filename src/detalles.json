@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "titulo": "Avatar: Fuego y Cenizas",
+    "imagen": "https://lumiere-a.akamaihd.net/v1/images/baja_integrado_vert_payoff_avatar_3_788f92d9.jpeg",
+    "descripcion": "Una nueva aventura en el universo de Pandora."
+  },
+  {
+    "id": 2,
+    "titulo": "¡Ayuda!",
+    "imagen": "https://lumiere-a.akamaihd.net/v1/images/ayuda_poster_a657c33f.jpeg",
+    "descripcion": "Una historia intensa llena de suspenso."
+  },
+  {
+    "id": 3,
+    "titulo": "Arco",
+    "imagen": "https://poluxweb.com/Polux3/images/data/cine/resenas/2026/febrero/Arco/Arco-01.jpg",
+    "descripcion": "Una película animada sobre amistad y esperanza."
+  }
+]
